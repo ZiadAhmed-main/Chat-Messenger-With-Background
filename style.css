@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+.active {
+    background-color: #00a4e4;
+    color: white;
+}
+.c-white {
+    color: white;
+}
+span {
+    display: block;
+    transition: .3s;
+}
+span:last-child {
+    color: #777;
+}
+.chat {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("./img/pexels-bri-schneiter-346529.jpg");
+    background-size: cover;
+    position: relative;
+}
+.main-box {
+    display: flex;
+    background-color: white;
+    width: 1000px;
+    max-width: 100%;
+}
+@media (max-width: 1000px) {
+    .main-box {
+        margin: 20px;
+    }
+}
+.main-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/*-----------------------Left side-------------------------------*/
+
+.main-box .left-side {
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+.main-box .left-side .upper {
+    padding: 25px 0px;
+    margin-inline: 25px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-box .left-side .upper .search {
+    flex: 1;
+    background-color: #eee;
+    height: 45px;
+    border-radius: 25px;
+}
+.main-box .left-side .upper .search input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding-inline: 20px;
+}
+.main-box .left-side .upper i {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #00a4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.main-box .left-side .friends .box {
+    transition: .3s;
+}
+.main-box .left-side .friends .box:hover {
+    background-color: #00a4e4;
+    color: white;
+}
+.main-box .left-side .friends .box:hover span {
+    color: white;
+}
+
+
+.main-box .left-side .friends .line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    cursor: pointer;
+    margin-inline: 35px;
+}
+.main-box .left-side .friends .box:not(:last-child) .line {
+    border-bottom: 1px solid #ddd;
+}
+.main-box .left-side .friends .box .person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-box .left-side .friends .box .person span {
+    display: block;
+    font-size: 15px;
+}
+.main-box .left-side .friends .box .person span:first-child {
+    font-weight: bold;
+}
+.main-box .left-side .friends .box .person .msg{
+    font-size: 14px;
+}
+.main-box .left-side .friends .box:last-child .person .msg{
+    color: white;
+}
+.main-box .left-side .friends .box  .time {
+    font-size: 14px;
+}
+/*-----------------------Left side-------------------------------*/
+
+/*-----------------------Right side-------------------------------*/
+.main-box .right-side {
+    flex: 1;
+}
+.main-box .right-side .space ,
+.main-box .right-side .msg-content {
+    padding-inline: 40px;
+}
+.main-box .right-side .friend {
+    padding: 10px 30px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-box .right-side .friend img {
+    width: 40px;
+    height: 40px;
+}
+.main-box .right-side .friend .status span:first-child {
+    font-weight: bold;
+    font-size: 15px;
+}
+.main-box .right-side .friend .status span:last-child {
+    font-size: 13px;
+    color: #00a4e4;
+}
+.main-box .right-side .friend i {
+    margin-left: auto;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.main-box .right-side .friend i:hover {
+    background-color: #ddd;
+}
+.main-box .right-side .space {
+    padding-top: 200px;
+    margin-inline: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.main-box .right-side .space span {
+    position: absolute;
+    padding: 15px;
+    background-color: white;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main-box .right-side .msg-content {
+    margin-bottom: 30px;
+}
+.main-box .right-side .msg-content .msg-to ,
+.main-box .right-side .msg-content .msg-from {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: fit-content;
+    position: relative;
+}
+
+.main-box .right-side .msg-content .msg-to {
+    background-color: #00a4e4;
+    color: white;
+    margin-left: auto;
+}
+.main-box .right-side .msg-content .msg-from {
+    background-color: #eee;
+}
+
+.main-box .right-side .msg-content .msg-to::before ,
+.main-box .right-side .msg-content .msg-from::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 7px;
+    border-style: solid;
+}
+.main-box .right-side .msg-content .msg-to::before {
+    border-color: transparent transparent transparent  #00a4e4;
+    right: -14px;
+
+}
+.main-box .right-side .msg-content .msg-from::before {
+    border-color: transparent #eee transparent transparent;
+    left: -14px;
+}
+
+.main-box .right-side .text-box {
+    display: flex;
+    align-items: center;
+    margin-inline: 30px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    padding: 12px;
+    border-radius: 6px;
+}
+.main-box .right-side .text-box i {
+    color: #777;
+    cursor: pointer;
+    transition: .3s;
+}
+.main-box .right-side .text-box i:hover {
+    color: #00a4e4;
+}
+.main-box .right-side .text-box input {
+    flex: 1;
+    margin-inline: 8px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding-inline: 15px;
+}
+.main-box .right-side .text-box .icons {
+    margin-left: auto;
+}
+.main-box .right-side .text-box .icons i {
+    margin-right: 8px;
+}
+/*-----------------------Right side-------------------------------*/
